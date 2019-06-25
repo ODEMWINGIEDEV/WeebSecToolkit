@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from programs import Encryptor2.5
 import sys, os
 import pyfiglet
 from pyfiglet import Figlet
@@ -8,7 +9,7 @@ def menu():
     while True:
         print("\n TOOLS")
         print("=======")
-        tools = ["autism", "dead"]
+        tools = []
         for i in range(len(tools)):
             print(str(i+1)+ ") " + tools[i])
             
@@ -24,10 +25,7 @@ def menu():
             print("\nERROR: Numeric values only\n\n")
         if valid_input == True:
             break
-            
 
-
-    print("\nyou did it retard")
 
 def main():
     main_font = Figlet(font="banner3") #Setup ASCII font
