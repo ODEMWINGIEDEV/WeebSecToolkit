@@ -14,11 +14,9 @@ def encrypt(key, filename):
 
     for i in range(16):
         IV += chr(random.randint(0, 0xff))
-    print("encoded IV:", IV.encode("utf8"), "type,", type(IV.encode("utf8")))
-    print("unencoded IV:", IV, "type,", type(IV))
 
-    """
-    encryptor = AES.new(key.encode("utf8"), AES.MODE_CBC, IV)
+
+    encryptor = AES.new(key, AES.MODE_CBC, IV)
 
     with open(filename, "rb") as infile:
         with open(out_file, "wb") as outfile:
@@ -34,7 +32,6 @@ def encrypt(key, filename):
                     chunk += ' ' * (16 -(len(chunk) % 16))
 
                 outfile.write(encryptor.encrypt(chunk))
-    """
 
 def decrypt(key, filename):
     rename_file = os.path.basename(filename)
@@ -75,8 +72,8 @@ def main():
     print("Press 1 to encypt all files in current directory")
     print("Press 2 to decrypt all files in current directory")
     print("Press 3 to decrypt only the selected file")
-    choice = input("\nChoice: ")
-    password = input("Enter the password: ")
+    choice = raw_input("\nChoice: ")
+    password = raw_input("Enter the password: ")
 
     enc_files = allfiles()
 
@@ -90,11 +87,9 @@ def main():
                 pass
            
             else:
-                encrypt(SHA256.new(password.encode("utf8")).digest(), str(Tfiles))
-                """
+                encrypt(SHA256.new(password).digest(), str(Tfiles))
                 print("Encryption Finished on %s" %str(Tfiles))
                 os.remove(Tfiles)
-                """
 
     elif choice == "2":
         for Tfiles in enc_files:
