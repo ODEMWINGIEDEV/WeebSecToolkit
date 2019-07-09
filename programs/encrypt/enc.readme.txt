@@ -1,0 +1,12 @@
+USAGE AND WARNINGS!!!
+
+1) This program was designed for educational and research purposes for me and my friends! Other uses are out of our hands and 
+   collaorators and I are not responsible for them.
+2) Incorrect usage can lead to files being lost forver. Once again I along with any collaborators, are not responsible for your, 
+   or any other peoples actions. 
+    A) Encrypting a whole directory will also encrypt the files of all other folders within the directory of the python program.
+    B) Using an incorrect decryption key will result in almost sure file loss, so be careful with mass decryption! Once you 
+      encrypted your files, relocate them and you will have no issues.
+    C) Random bugs or errors may also occur at any time and may result in loss of files.
+3) Files with "enc." at the start will be ignored by the encryptot
+    
